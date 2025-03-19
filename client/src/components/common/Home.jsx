@@ -178,6 +178,7 @@ import { useUser } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Home.css';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
 
 function Home() {
   const { currentUser, setCurrentUser } = useContext(UserAuthorContextObj);
@@ -193,7 +194,7 @@ function Home() {
     let res = null;
     try {
       if (selectedRole === "author") {
-        res = await axios.post(`${process.env.REACT_APP_API_URL}/author-api/author`, updatedUser);
+        res = await axios.post(`${API_URL}/author-api/author`, updatedUser);
         let { message, payload } = res.data;
         if (message === "author") {
           if (payload.isActive === true) {
@@ -207,7 +208,7 @@ function Home() {
         }
       }
       if (selectedRole === 'user') {
-        res = await axios.post(`${process.env.REACT_APP_API_URL}/user-api/user`, updatedUser);
+        res = await axios.post(`${API_URL}/user-api/user`, updatedUser);
         let { message, payload } = res.data;
         if (message === 'user') {
           if (payload.isActive === true) {
@@ -225,7 +226,7 @@ function Home() {
           setError("Invalid Role: You are not authorized as an admin.");
           return;
         }
-        res = await axios.post(`${process.env.REACT_APP_API_URL}/admin-api/admin`, updatedUser);
+        res = await axios.post(`${API_URL}/admin-api/admin`, updatedUser);
         let { message, payload } = res.data;
         if (message === 'admin') {
           if (payload.isActive === true) {

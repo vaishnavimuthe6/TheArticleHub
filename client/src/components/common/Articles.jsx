@@ -136,6 +136,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
 import { useUser } from '@clerk/clerk-react';
 import { UserAuthorContextObj } from '../../contexts/UserAuthorContext';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -152,7 +153,7 @@ function Articles() {
     const token = await getToken();
     // Make authenticated request
     if (currentUser.role === 'author' || currentUser.role === 'user') {
-      let res = await axios.get(`${process.env.REACT_APP_API_URL}/author-api/articles`, {
+      let res = await axios.get(`${API_URL}/author-api/articles`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -166,7 +167,7 @@ function Articles() {
       }
     }
     if (currentUser.role === 'admin') {
-      let res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-api/articles`, {
+      let res = await axios.get(`${API_URL}/admin-api/articles`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

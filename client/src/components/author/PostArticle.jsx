@@ -111,7 +111,7 @@ import {UserAuthorContextObj} from '../../contexts/UserAuthorContext';
 import {useNavigate} from 'react-router-dom';
 import {useForm} from 'react-hook-form'
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
 
 function PostArticle() {
 

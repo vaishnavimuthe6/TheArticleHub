@@ -286,6 +286,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
 
 function ArticleByID() {
   const { state } = useLocation();
@@ -313,7 +314,7 @@ function ArticleByID() {
 
     // Make HTTP PUT request
     let res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/author-api/article/${articleAfterChanges.articleId}`,
+      `${API_URL}/author-api/article/${articleAfterChanges.articleId}`,
       articleAfterChanges,
       {
         headers: {
@@ -336,7 +337,7 @@ function ArticleByID() {
     console.log(commentObj);
     // HTTP PUT request
     let res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/user-api/comment/${currentArticle.articleId}`,
+      `${API_URL}/user-api/comment/${currentArticle.articleId}`,
       commentObj
     );
     if (res.data.message === 'comment added') {
@@ -348,7 +349,7 @@ function ArticleByID() {
   async function deleteArticle() {
     state.isArticleActive = false;
     let res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/author-api/articles/${state.articleId}`,
+      `${API_URL}/author-api/articles/${state.articleId}`,
       state
     );
     if (res.data.message === 'article deleted or restored') {
@@ -360,7 +361,7 @@ function ArticleByID() {
   async function restoreArticle() {
     state.isArticleActive = true;
     let res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/author-api/articles/${state.articleId}`,
+      `${API_URL}/author-api/articles/${state.articleId}`,
       state
     );
     if (res.data.message === 'article deleted or restored') {
@@ -372,7 +373,7 @@ function ArticleByID() {
   async function deleteArticleAsAdmin() {
     state.isArticleActive = false;
     let res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/admin-api/articles/${state.articleId}`,
+      `${API_URL}/admin-api/articles/${state.articleId}`,
       state
     );
     if (res.data.message === 'article deleted or restored') {
@@ -384,7 +385,7 @@ function ArticleByID() {
   async function restoreArticleAsAdmin() {
     state.isArticleActive = true;
     let res = await axios.put(
-      `${process.env.REACT_APP_API_URL}/admin-api/articles/${state.articleId}`,
+      `${API_URL}/admin-api/articles/${state.articleId}`,
       state
     );
     if (res.data.message === 'article deleted or restored') {
