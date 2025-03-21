@@ -209,7 +209,7 @@ import axios from 'axios';
 import { ImBlocked } from "react-icons/im";
 import { FcApprove } from "react-icons/fc";
 
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-backend.onrender.com';
 
 function AdminDashboard() {
     const { getToken } = useAuth();

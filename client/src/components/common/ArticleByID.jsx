@@ -286,7 +286,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-backend.onrender.com';
 
 function ArticleByID() {
   const { state } = useLocation();

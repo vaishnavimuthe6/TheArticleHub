@@ -178,7 +178,7 @@ import { useUser } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Home.css';
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-backend.onrender.com';
 
 function Home() {
   const { currentUser, setCurrentUser } = useContext(UserAuthorContextObj);

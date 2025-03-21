@@ -136,7 +136,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
 import { useUser } from '@clerk/clerk-react';
 import { UserAuthorContextObj } from '../../contexts/UserAuthorContext';
-const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-2.onrender.com';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || 'https://thearticlehub-backend.onrender.com';
 
 function Articles() {
   const [articles, setArticles] = useState([]);
