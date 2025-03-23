@@ -44,7 +44,7 @@ function Footer() {
       </div>
       
       <div className="text-center mt-5 border-top pt-3">
-        <p className="footer-alt mb-0 f-14">2024 © VNRBLOGAPP, All Rights Reserved</p>
+        <p className="footer-alt mb-0 f-14">2024 © TheArticleHub, All Rights Reserved</p>
       </div>
     </footer>
   );
