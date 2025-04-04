@@ -12,7 +12,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
   }
+  .grid:hover {
+    transform: scale(1.1);
+}
   
   .grid img {
     width: 80px;

@@ -37,3 +37,22 @@
 .ch{
   height:300px;
 }
+.imgs {
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.imgs:hover {
+  transform: scale(1.2);
+}
+
+
+.parent{
+  width:200px;
+  display:flex;
+  flex-wrap: wrap;
+  margin:auto;
+
+}
