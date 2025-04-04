@@ -47,8 +47,6 @@
 .imgs:hover {
   transform: scale(1.2);
 }
-
-
 .parent{
   width:200px;
   display:flex;
